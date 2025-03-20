@@ -1,8 +1,8 @@
 FROM debian:stable-slim 
 
 LABEL maintainer="Jim Clausing, jclausing@isc.sans.edu"
-LABEL version="uac v3.0.0"
-LABEL date="2024-10-22"
+LABEL version="uac v3.1.0"
+LABEL date="2025-03-20"
 LABEL description="Run UAC in a docker container"
 
 RUN apt-get update && apt-get -y install --no-install-recommends wget unzip ca-certificates \
@@ -10,7 +10,7 @@ RUN apt-get update && apt-get -y install --no-install-recommends wget unzip ca-c
 
 # Install UAC
 WORKDIR /app
-RUN wget https://github.com/tclahr/uac/releases/download/v3.0.0/uac-3.0.0.tar.gz \
+RUN wget https://github.com/tclahr/uac/releases/download/v3.1.0/uac-3.1.0.tar.gz \
   && tar xvf uac-*.tar.gz && rm *.tar.gz && mv uac-* uac
 
 WORKDIR /app/uac
